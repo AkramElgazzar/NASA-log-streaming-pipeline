@@ -26,7 +26,7 @@ The pipeline enables *real-time ingestion, processing, and storage, with **Spark
 
 ##  Pipeline Structure
 
-text
+```text
 Web Server Log Pipeline
 ├── Data Ingestion
 │   ├── Source: NASA-HTTP Logs
@@ -59,17 +59,17 @@ Web Server Log Pipeline
     │   ├── Method Distribution (e.g., GET, POST)
     │   └── IP Traffic (counts by IP address)
     └── Output: Console (real-time analytics)
-
+```
 
 ---
 
 ##  Project Files
-text
+```text
 ├── stream_logs.py          # Log streaming script
 ├── log_analysis.py         # Spark analysis script
 ├── flume-agent1.conf       # Netcat → Kafka config
 └── flume-agent2.conf       # Kafka → HDFS config
-
+```
 
 ---
 
@@ -126,5 +126,6 @@ I encountered a Kafka version mismatch error while running the project.
 The log_analysis.py script needed to be updated to match the Kafka version (0.9.0.1). 
 To resolve this, I exported the following environment variable before running Spark:
 
-bash
+```bash
 export PYSPARK_SUBMIT_ARGS='--packages org.apache.spark:spark-sql-kafka-0-10_2.11:2.4.5,org.apache.kafka:kafka-clients:0.9.0.1 pyspark-shell
+```
