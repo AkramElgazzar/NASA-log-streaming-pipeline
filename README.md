@@ -12,7 +12,9 @@ The pipeline enables *real-time ingestion, processing, and storage, with **Spark
 ---
 
 ##  Pipeline Architecture
+![System Architecture](Architecture.PNG)
 
+---
 ###  *Flow Overview:*
 
 1. *Data Ingestion*: Fetches NASA-HTTP logs from a remote source and streams them to Flume.
